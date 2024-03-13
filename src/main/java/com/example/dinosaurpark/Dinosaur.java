@@ -1,15 +1,33 @@
 package com.example.dinosaurpark;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Dinosaur {
-    private String name;
-    private String type;
+    private Integer id;
+
+    private String dinoName;
+    private String dinoSpecies;
+    private String dinoEra;
+    private String dinoType;
+    private String dinoFeature;
+    private Double dinoSize;
+    private Double dinoWeight;
+    private Integer dinoDangerLevel; 
+    private Integer dinoHealthStatus; 
+    
+    public Dinosaur(Integer id, String dinoName, String dinoSpecies, String dinoEra, String dinoType, String dinoFeature, double dinoSize, double dinoWeight, Integer dinoDangerLevel, Integer dinoHealthStatus) {
+    	this.id = id;
+        this.dinoName = dinoName;
+        this.dinoSpecies = dinoSpecies;
+        this.dinoEra = dinoEra;
+        this.dinoType = dinoType;
+        this.dinoFeature = dinoFeature;
+        this.dinoSize = dinoSize;
+        this.dinoWeight = dinoWeight;
+        this.dinoDangerLevel = dinoDangerLevel;
+        this.dinoHealthStatus = dinoHealthStatus;
+    }
 }
