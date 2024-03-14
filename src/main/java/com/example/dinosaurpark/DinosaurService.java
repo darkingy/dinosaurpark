@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class DinosaurService {
 	private static final List<Dinosaur> DINOSAURS = Arrays.asList(
-			new Dinosaur(1, "렉스", "티라노사우루스", "수각류", "육식", "가장 유명한 티라노사우루스로, 세계에서 가장 강력한 포식자 중 하나로 알려져 있습니다.", 12.3,
+		  new Dinosaur(1, "렉스", "티라노사우루스", "수각류", "육식", "가장 유명한 티라노사우루스로, 세계에서 가장 강력한 포식자 중 하나로 알려져 있습니다.", 12.3,
 					9000.0, 10, 5),
 			new Dinosaur(2, "테라", "티라노사우루스", "수각류", "육식", "거대한 몸집과 강력한 발톱을 가지고, 숲을 횡단하는 능력이 뛰어납니다.", 13.7, 10100.0, 10,
 					7),
@@ -37,7 +37,7 @@ public class DinosaurService {
 			new Dinosaur(19, "웨이브브레이커", "브라카우케니우스", "장경룡목", "육식", "심해에서 사냥하는데 특화된 대형 수룡입니다.", 20.0, 9100.0, 10, 6),
 			new Dinosaur(20, "딥다이버", "브라카우케니우스", "장경룡목", "육식", "뾰족한 이빨로 먹잇감을 부수어 으깨 먹습니다.", 17.0, 7900.0, 9, 8)
 
-	);
+	    );
 
 	public List<Dinosaur> getAllDinosaurs() {
 		return DINOSAURS;
