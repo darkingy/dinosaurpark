@@ -1,6 +1,6 @@
 package com.example.dinosaurpark.employee;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,11 +21,11 @@ public class Employee {
 	private String empEmail;
 	private Integer empPhone;
 	private String empAddress;
-	private LocalDateTime empBirth;
+	private LocalDate empBirth;
 	private Integer empWorkYear;
 
 	public Employee(Integer id, String empName, String empPosition, String empDepart, String empEmail, Integer empPhone,
-			String empAddress, LocalDateTime empBirth, Integer empWorkYear) {
+			String empAddress, LocalDate empBirth, Integer empWorkYear) {
 
 		this.id = id;
 		this.empName = empName;
