@@ -19,12 +19,12 @@ public class Employee {
 	private String empPosition;
 	private String empDepart;
 	private String empEmail;
-	private Integer empPhone;
+	private String empPhone;
 	private String empAddress;
 	private LocalDate empBirth;
 	private Integer empWorkYear;
 
-	public Employee(Integer id, String empName, String empPosition, String empDepart, String empEmail, Integer empPhone,
+	public Employee(Integer id, String empName, String empPosition, String empDepart, String empEmail, String empPhone,
 			String empAddress, LocalDate empBirth, Integer empWorkYear) {
 
 		this.id = id;

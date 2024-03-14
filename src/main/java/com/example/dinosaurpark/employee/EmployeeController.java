@@ -24,6 +24,6 @@ public class EmployeeController {
 	public String employeeDetails(Model model, @PathVariable("id") Integer id) {
 	    Employee employee = employeeService.getEmployeeById(id);
 	    model.addAttribute("employee", employee);
-		return "employee_details";
+		return "employeeProfile";
 	}
 }
