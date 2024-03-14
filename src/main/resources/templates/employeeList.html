@@ -28,7 +28,7 @@
     <!-- 각 직원에 대해 반복문 수행 -->
     <tr th:each="employee : ${employees}">
         <td th:text="${employee.id}">번호</td>
-        <td th:text="${employee.empName}">이름</td>
+        <td><a th:href="@{/employees/details/{id}(id=${employee.id})}" th:text="${employee.empName}">이름</a></td>
         <td th:text="${employee.empPosition}">직책</td>
         <td th:text="${employee.empDepart}">부서</td>
         <td th:text="${employee.empEmail}">이메일</td>

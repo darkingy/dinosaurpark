@@ -66,4 +66,11 @@ public class EmployeeService {
 	public List<Employee> getAllEmployees() {
 		return EMPLOYEES;
 	}
+	
+	public Employee getEmployeeById(Integer id) {
+	    return EMPLOYEES.stream()
+	            .filter(employee -> id.equals(employee.getId()))
+	            .findFirst()
+	            .orElse(null);
+	}
 }
