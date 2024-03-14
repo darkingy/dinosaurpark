@@ -8,6 +8,6 @@ public class MainController {
     
     @GetMapping("/eden")
     public String list() {
-        return "t2";
+        return "demo";
     }
 }
