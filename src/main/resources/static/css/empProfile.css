@@ -6,8 +6,6 @@
 body {
   color: #2b2c48;
   font-family: "Jost", sans-serif;
-  background-image: url(https://images.unsplash.com/photo-1566738780863-f9608f88f3a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2378&q=80);
-
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -16,11 +14,16 @@ body {
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
+  gap: 50px;
+  justify-content: center;
 }
 
 .card {
+  flex: 0 0 calc(20% - 40px);
   max-width: 340px;
+  min-width: 200px;
   margin: auto;
+  margin-bottom: 20px;
   overflow-y: auto;
   position: relative;
   z-index: 1;
@@ -32,6 +35,8 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
 }
+
+
 
 .card[data-state="#about"] {
   height: 450px;
@@ -380,3 +385,4 @@ body {
   font-family: "Jost", sans-serif;
   transition: 0.3s;
 }
+
