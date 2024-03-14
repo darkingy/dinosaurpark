@@ -1,7 +1,10 @@
 package com.example.dinosaurpark.dinosaur;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -44,5 +47,18 @@ public class DinosaurService {
 	            .findFirst()
 	            .orElse(null);
 	}
+	
+	// 공룡을 종류별로 그룹화하여 맵 형태로 반환하는 메서드
+    public Map<String, List<Dinosaur>> getDinosaursByType() {
+        Map<String, List<Dinosaur>> dinosaurMap = new HashMap<>();
 
+        for (Dinosaur dinosaur : DINOSAURS) {
+            String type = dinosaur.getDinoType();
+            List<Dinosaur> typeList = dinosaurMap.getOrDefault(type, new ArrayList<>());
+            typeList.add(dinosaur);
+            dinosaurMap.put(type, typeList);
+        }
+
+        return dinosaurMap;
+    }
 }
