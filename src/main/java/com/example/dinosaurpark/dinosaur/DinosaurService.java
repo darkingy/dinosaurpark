@@ -1,4 +1,4 @@
-package com.example.dinosaurpark;
+package com.example.dinosaurpark.dinosaur;
 
 import java.util.Arrays;
 import java.util.List;
@@ -41,6 +41,13 @@ public class DinosaurService {
 
 	public List<Dinosaur> getAllDinosaurs() {
 		return DINOSAURS;
+	}
+	
+	public Dinosaur getDinosaurById(Integer id) {
+	    return DINOSAURS.stream()
+	            .filter(dinosaur -> id.equals(dinosaur.getId()))
+	            .findFirst()
+	            .orElse(null);
 	}
 
 }

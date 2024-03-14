@@ -1,10 +1,11 @@
-package com.example.dinosaurpark;
+package com.example.dinosaurpark.dinosaur;
 
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class DinosaurController {
@@ -20,5 +21,12 @@ public class DinosaurController {
 		List<Dinosaur> dinosaurs = dinosaurService.getAllDinosaurs();
 		model.addAttribute("dinosaurs", dinosaurs);
 		return "dinosaurList";
+	}
+	
+	@GetMapping(value = "/dinosaurs/details/{id}")
+	public String dinosaurDetails(Model model, @PathVariable("id") Integer id) {
+	    Dinosaur dinosaur = dinosaurService.getDinosaurById(id);
+	    model.addAttribute("dinosaur", dinosaur);
+		return "dinosaur_details";
 	}
 }
