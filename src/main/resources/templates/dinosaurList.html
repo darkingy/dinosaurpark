@@ -11,15 +11,7 @@
 <h1>공룡 리스트</h1>
 <ul>
     <li th:each="dinosaur : ${dinosaurs}">
-        <span th:text="${dinosaur.dinoName}">이름</span>,
-        <span th:text="${dinosaur.dinoSpecies}">종</span>,
-        <span th:text="${dinosaur.dinoEra}">서식지</span>,
-        <span th:text="${dinosaur.dinoType}">타입</span>,
-        <span th:text="${dinosaur.dinoFeature}">특징</span>,
-        크기: <span th:text="${dinosaur.dinoSize}">크기</span>,
-        무게: <span th:text="${dinosaur.dinoWeight}">무게</span>,
-        위험 레벨: <span th:text="${dinosaur.dinoDangerLevel}">위험 레벨</span>,
-        건강 정보: <span th:text="${dinosaur.dinoHealthStatus}">건강 정보</span>
+        <a th:href="@{/dinosaurs/details/{id}(id=${dinosaur.id})}" th:text="${dinosaur.dinoName}"></a>
     </li>
 </ul>
 </body>
