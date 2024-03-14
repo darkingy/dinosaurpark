@@ -26,4 +26,11 @@ public class EmployeeController {
 	    model.addAttribute("employee", employee);
 		return "employeeProfile";
 	}
+    
+    @GetMapping("/empprofile")
+    public String empProfile(Model model) {
+        model.addAttribute("employees", employeeService.getAllEmployees());
+        return "employee_details";
+
+    }
 }
