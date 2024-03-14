@@ -1,42 +1,18 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>직원 리스트</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>부서</title>
+    <link rel="stylesheet" th:href="@{/css/department.css}">
 </head>
 <body>
-<h1>직원 리스트</h1>
-<table class="table">
-    <thead>
-    <tr>
-        <th>번호</th>
-        <th>이름</th>
-        <th>직책</th>
-        <th>부서</th>
-        <th>이메일</th>
-        <th>전화번호</th>
-        <th>주소</th>
-        <th>생년월일</th>
-        <th>근무연수</th>
-    </tr>
-    </thead>
-    <tbody>
-    <!-- 각 직원에 대해 반복문 수행 -->
-    <tr th:each="employee : ${employees}">
-        <td th:text="${employee.id}">번호</td>
-        <td><a th:href="@{/employees/details/{id}(id=${employee.id})}" th:text="${employee.empName}">이름</a></td>
-        <td th:text="${employee.empPosition}">직책</td>
-        <td th:text="${employee.empDepart}">부서</td>
-        <td th:text="${employee.empEmail}">이메일</td>
-        <td th:text="${employee.empPhone}">전화번호</td>
-        <td th:text="${employee.empAddress}">주소</td>
-        <td th:text="${employee.empBirth}">생년월일</td>
-        <td th:text="${employee.empWorkYear}">근무연수</td>
-    </tr>
-    </tbody>
-</table>
+<h1>MESOZOIC PARK DEPARTMENT</h1>
+<div class="container">
+    <a th:href="@{/customPath/guide}"><div class="box box-1" data-text="가이드팀"><img th:src="@{/img/가이드.jpg}"></div></a>
+    <a th:href="@{/customPath/security}"><div class="box box-2" data-text="보안팀"><img th:src="@{/img/보안요원.jpg}"></div></a>
+    <a th:href="@{/customPath/zookeeper}"><div class="box box-3" data-text="사육사팀"><img th:src="@{/img/사육사.jpg}"></div></a>
+    <a th:href="@{/customPath/vet}"><div class="box box-4" data-text="수의사팀"><img th:src="@{/img/수의사.jpg}"></div></a>
+    <a th:href="@{/customPath/salery}"><div class="box box-5" data-text="영업팀"><img th:src="@{/img/영업사원.jpg}"></div></a>
+</div>
 </body>
 </html>
