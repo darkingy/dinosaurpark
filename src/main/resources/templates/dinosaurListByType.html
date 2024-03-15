@@ -1,57 +1,63 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>유형별 공룡 정보</title>
-    <link rel="stylesheet" href="/css/dnoDetails.css">
+    <link rel="stylesheet" th:href="@{/css/dnoDetails.css}">
 </head>
 <body>
-<div class="container">
-    <h1>유형별 공룡 정보 - <span th:text="${type}"></span></h1>
-    <div class="row">
-        <div th:each="dino : ${dinosaurs}">
-            <div class="col-md-6">
-                <div class="dino-card">
-                    <p><span></span> <span th:text="${dino.dinoName}"></span></p>
-                    <div class="dino-card-content"> <!-- 수정된 부분 -->
-                        <p><span>종:</span> <span th:text="${dino.dinoSpecies}"></span></p>
-                        <p><span>시대:</span> <span th:text="${dino.dinoEra}"></span></p>
-                        <p><span>특징:</span> <span th:text="${dino.dinoFeature}"></span></p>
-                        <p><span>크기:</span> <span th:text="${dino.dinoSize}"></span>m</p>
-                        <p><span>무게:</span> <span th:text="${dino.dinoWeight}"></span>kg</p>
-                        <p><span>위험 레벨:</span> <span th:text="${dino.dinoDangerLevel}"></span></p>
-                        <p><span>건강 정보:</span> <span th:text="${dino.dinoHealthStatus}"></span></p>
+    <header class="section__header"><a th:href="@{/eden}"><img th:src="@{/img/logo_2_1.png}" class="header-logo"></a>
+    </header>
+    <div class="container">
+        <h1 class="info-title">유형별 공룡 정보 - <span th:text="${type}"></span></h1>
+        <div class="row">
+            <div th:each="dino : ${dinosaurs}">
+                <div class="col-md-6">
+                    <div class="dino-card">
+                        <p><span></span> <span th:text="${dino.dinoName}"></span></p>
+                        <div class="dino-details dino-card-content"><br>
+                            <p><span>종:</span> <span th:text="${dino.dinoSpecies}"></span></p>
+                            <p><span>시대:</span> <span th:text="${dino.dinoEra}"></span></p>
+                            <p><span>특징:</span> <span th:text="${dino.dinoFeature}"></span></p>
+                            <p><span>크기:</span> <span th:text="${dino.dinoSize}"></span>m</p>
+                            <p><span>무게:</span> <span th:text="${dino.dinoWeight}"></span>kg</p>
+                            <p><span>위험 레벨:</span> <span th:text="${dino.dinoDangerLevel}"></span></p>
+                            <p><span>건강 정보:</span> <span th:text="${dino.dinoHealthStatus}"></span></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- 이전 페이지로 돌아가는 버튼 -->
-<div class="container mt-3">
-    <a href="/dinosaurs" class="btn btn-secondary">이전 페이지로 돌아가기</a>
-</div>
+    <!-- 이전 페이지로 돌아가는 버튼 -->
+    <div class="container mt-3">
+        <a href="/dinosaurs" class="btn btn-secondary">이전 페이지로 돌아가기</a>
+    </div>
 
 <script>
-    document.querySelectorAll('.dino-card').forEach(card => {
-        card.addEventListener('click', () => {
-            const content = card.querySelector('.dino-card-content'); // 수정된 부분
-            const isActive = card.classList.contains('active');
-            
-            // Close other cards
-            document.querySelectorAll('.dino-card').forEach(otherCard => {
-                if (otherCard !== card) {
-                    otherCard.classList.remove('active');
-                    otherCard.querySelector('.dino-card-content').style.display = 'none';
-                }
-            });
-            
-            // Toggle active class to open/close the card
-            card.classList.toggle('active');
-            content.style.display = isActive ? 'none' : 'block';
-        });
-    });
-</script>
+	document.querySelectorAll('.dino-card').forEach(card => {
+   		card.addEventListener('click', () => {
+        	const content = card.querySelector('.dino-card-content');
+        	const isActive = card.classList.contains('active');
 
+        // Close other cards
+        document.querySelectorAll('.dino-card').forEach(otherCard => {
+            if (otherCard !== card) {
+                otherCard.classList.remove('active');
+                otherCard.querySelector('.dino-card-content').style.display = 'none';
+            }
+        });
+
+        // Toggle active class to open/close the card
+        if (isActive) {
+            card.classList.remove('active');
+            content.style.display = 'none';
+        } else {
+            card.classList.add('active');
+            content.style.display = 'block';
+        }
+    });
+});
+</script>
 </body>
 </html>
