@@ -50,3 +50,24 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  const heroLogo = document.querySelector('.hero__logo');
+  const navLogo = document.querySelector('.nav__logo img');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        //hero__logo가 스크롤에 나타날 때
+        navLogo.style.transition = 'transform 0.5s ease-in-out';
+        navLogo.style.transform = 'translateY(0)';
+      } else {
+        //hero__logo가 스크롤에 사라질 때
+        navLogo.style.transition = 'transform 0.5s ease-in-out';
+        navLogo.style.transform = 'translateY(-100%);'
+      }
+    });
+  }, {threshold: 0.5 }); //스크롤이 50% 이상 되었을 때 이벤트 발생
+
+  observer.observe(heroLogo);
+});
