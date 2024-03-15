@@ -8,8 +8,6 @@ $sm-h: 30em;
 $font-heading: "Anton", sans-serif;
 $font-body: "Overpass Mono", monospace;
 
-$primary: #ffa700;
-
 /* Mixins and functions */
 @function rem($size) {
 	$remSize: $size / 16px;
@@ -19,6 +17,10 @@ $primary: #ffa700;
 /* Reset */
 * {
 	box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -122,25 +124,25 @@ main {
   }
 }
 
-.nav__item--cta {
-	margin-left: rem(20px);
+.nav__logo {
 	
   a {
-    font-family: $font-heading;
-    font-size: rem(20px);
-    text-transform: uppercase;
-    line-height: 1;
-    color: black;
-    background: $primary;
-    border-radius: rem(6px);
-    min-width: rem(180px);
-    text-align: center;
+    display: block;
+    width: 200px;
+    height: 150px;
+    text-indent: -9999px;
+    filter: drop-shadow(3px 3px 20px #FFFFF0);
 
     &:hover,
     &:focus {
-      text-decoration: none;
-      background-color: darken($primary, 15%);
+      filter: drop-shadow(5px 5px 30px rgba(0, 0, 0, 0.5));
     }
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 }
 
