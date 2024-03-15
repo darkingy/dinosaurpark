@@ -97,4 +97,7 @@ span {
     font-size: 14px; /* 기본 텍스트 크기 설정 */
     color: #333; /* 기본 텍스트 색상 설정 */
     margin-top: 10px; /* 위쪽 마진 추가 */
+    border-top: 1.5px solid #ddd; /* 상단에 1픽셀 두께의 실선을 추가합니다. */
+    margin-top: 10px; /* 구분선과 내용 사이의 간격을 조정합니다. */
+    padding-top: 5px; /* 내용 위에 여백을 추가하여 구분선과 내용 사이의 간격을 조정합니다. */
 }
