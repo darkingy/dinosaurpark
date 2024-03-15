@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+
 import java.util.List;
 import java.util.Map;
 
@@ -23,18 +24,18 @@ public class DinosaurController {
         return "dinosaurList";
     }
     
-    @GetMapping("/dinosaurs/details/{id}")
-    public String dinosaurDetails(Model model, @PathVariable("id") Integer id) {
-        Dinosaur dinosaur = dinosaurService.getDinosaurById(id);
-        model.addAttribute("dinosaur", dinosaur);
-        return "dinosaur.details"; 
-    }
+	
+	@GetMapping("/dinosaurs/details/{id}") public String dinosaurDetails(Model
+	model, @PathVariable("id") Integer id) { Dinosaur dinosaur =
+	dinosaurService.getDinosaurById(id); model.addAttribute("dinosaur",
+	dinosaur); return "dinosaur.details"; }
+	 
     
     @GetMapping("/dinosaurs/type/{type}")
     public String listDinosaursByType(Model model, @PathVariable("type") String type) {
         List<Dinosaur> dinosaurs = dinosaurService.getDinosaursByType().get(type);
-        model.addAttribute("dinosaurs", dinosaurs);
-        return "dinosaurList"; 
+        model.addAttribute("dinosaurs", dinosaurs); // 공룡 정보를 모델에 추가
+        model.addAttribute("type", type); // 공룡 종류를 모델에 추가
+        return "dinosaurListByType"; // 정보 페이지로 이동
     }
-    
 }
