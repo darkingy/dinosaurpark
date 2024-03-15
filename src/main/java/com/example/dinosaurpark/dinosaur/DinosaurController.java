@@ -28,7 +28,7 @@ public class DinosaurController {
 	@GetMapping("/dinosaurs/details/{id}") public String dinosaurDetails(Model
 	model, @PathVariable("id") Integer id) { Dinosaur dinosaur =
 	dinosaurService.getDinosaurById(id); model.addAttribute("dinosaur",
-	dinosaur); return "dinosaur.details"; }
+	dinosaur); return "dinosaur_details"; }
 	 
     
     @GetMapping("/dinosaurs/type/{type}")
