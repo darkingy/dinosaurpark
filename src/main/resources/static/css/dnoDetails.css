@@ -45,3 +45,35 @@ span {
 .btn:hover {
     background-color: #0056b3;
 }
+
+.dino-card {
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+        
+.dino-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+        
+.dino-card p {
+    margin: 5px 0;
+    color: #333;
+}
+        
+.dino-card h3 {
+    margin-bottom: 10px;
+    color: #007bff;
+}
+.dino-card-content {
+    display: none;
+}
+
+.dino-card.active .dino-card-content {
+    display: block;
+}

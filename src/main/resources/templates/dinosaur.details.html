@@ -8,26 +8,27 @@
 <body>
 <div class="container">
     <div class="info-container">
-        <h1 th:text="${dinosaur.dinoName}"></h1>
+        <h1 th:text="${dinosaur.dinoType}"></h1> <!-- 종류 표시 -->
         <div class="row">
-            <div class="col-md-6">
-                <p><span>종:</span> <span th:text="${dinosaur.dinoSpecies}"></span></p>
-                <p><span>시대:</span> <span th:text="${dinosaur.dinoEra}"></span></p>
-                <p><span>분류:</span> <span th:text="${dinosaur.dinoType}"></span></p>
-                <p><span>특징:</span> <span th:text="${dinosaur.dinoFeature}"></span></p>
-            </div>
-            <div class="col-md-6">
-                <p><span>크기:</span> <span th:text="${dinosaur.dinoSize}"></span>m</p>
-                <p><span>무게:</span> <span th:text="${dinosaur.dinoWeight}"></span>kg</p>
-                <p><span>위험 레벨:</span> <span th:text="${dinosaur.dinoDangerLevel}"></span></p>
-                <p><span>건강 정보:</span> <span th:text="${dinosaur.dinoHealthStatus}"></span></p>
+            <!-- 해당 종류의 공룡 정보 출력 -->
+            <div th:each="dino : ${dinosaurs}">
+                <div class="col-md-6">
+                    <p><span>이름:</span> <span th:text="${dino.dinoName}"></span></p>
+                    <p><span>종:</span> <span th:text="${dino.dinoSpecies}"></span></p>
+                    <p><span>시대:</span> <span th:text="${dino.dinoEra}"></span></p>
+                    <p><span>특징:</span> <span th:text="${dino.dinoFeature}"></span></p>
+                    <p><span>크기:</span> <span th:text="${dino.dinoSize}"></span>m</p>
+                    <p><span>무게:</span> <span th:text="${dino.dinoWeight}"></span>kg</p>
+                    <p><span>위험 레벨:</span> <span th:text="${dino.dinoDangerLevel}"></span></p>
+                    <p><span>건강 정보:</span> <span th:text="${dino.dinoHealthStatus}"></span></p>
+                </div>
             </div>
         </div>
     </div>
 </div>
 <!-- 이전 페이지로 돌아가는 버튼 -->
 <div class="container mt-3">
-    <a href="/dinosaurs" class="btn btn-secondary">이전 페이지로 돌아가기</a>
+    <a href="/eden/dinosaurs" class="btn btn-secondary">이전 페이지로 돌아가기</a>
 </div>
 </body>
 </html>
