@@ -341,35 +341,17 @@ main {
 
 .hero__text {
   position: relative;
-  text-align: center;
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  text-shadow: 0 0.1em rem(15px) rgba(0, 0, 0, 0.25);
+  width: 600px;
+  height: 500px;
 }
 
-.hero__title {
-  margin-bottom: 0;
-  width: 100%;
-	z-index: 1;
-}
-
-.hero__intro {
-  width: 100%;
-	z-index: 1;
-
-  @media (min-width: $md) {
-    font-size: rem(22px);
-  }
-}
-
-.hero__footprint {
+.hero__logo {
   position: absolute;
-	width: 150%;
-	height: 150%;
 	object-fit: contain;
 	object-position: center;
+  filter: drop-shadow(3px 3px 20px #FFFFF0);
 }
 
 .gentle-giants {
