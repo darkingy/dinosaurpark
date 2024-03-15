@@ -16,7 +16,7 @@
                     <a th:href="@{/dinosaurs}">Dinosaurs</a>
                 </li>
                 <li class="nav__item">
-                    <a th:href="@{/employees}">Employees</a>
+                    <a href="#employee">Employees</a>
                 </li>
                 <li class="nav__item">
                     <a href="#">a</a>
@@ -52,7 +52,7 @@
         </div>
     </section>
     
-    <section class="section gentle-giants">
+    <section class="section gentle-giants" id="dinosaur">
         <header class="section__header">
             <h3 class="section__title">Explore & Discover</h3>
         </header>
@@ -93,24 +93,7 @@
 </div>
 </section>
 
-<section class="section aerial-adventure">
-    <header class="section__header">
-        <h3 class="section__title">Learn & Connect</h3>
-    </header>
-    <div
-    class="section__content"
-    data-content
-    >
-    <img class="section__img" src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/85648/pterodactyl.svg' alt='Pterodactyl'>
-    <h2 class="section__main-title section__main-title--left">Aerial Adventure</h2>
-    <div class="section__intro aerial-adventure__intro">
-        <p>
-            Get a birds’ eye view of the most magnificent aerial predators!
-        </p>
-    </div>
-</div>
-</section>
-<section>
+<section id=employee>
 <header class="section__header">
         <h3 class="section__title">Employees</h3>
     </header>
