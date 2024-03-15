@@ -4,18 +4,25 @@
   box-sizing: border-box;
 }
 body {
-  color: #2b2c48;
-  font-family: "Jost", sans-serif;
+  display: flex;
+  flex-direction: column; /* body의 자식 요소들을 세로로 정렬 */
+  align-items: center; /* 센터 정렬 */
+  justify-content: flex-start; /* 상단에서 시작 */
+  padding: 20px;
+  gap: 50px;
+  min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  min-height: 100vh;
+}
+
+.cards-container {
   display: flex;
   flex-wrap: wrap;
-  padding: 20px;
-  gap: 50px;
   justify-content: center;
+  width: 100%;
+  gap: 50px;
 }
 
 .card {
