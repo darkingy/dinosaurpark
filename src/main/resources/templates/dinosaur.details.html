@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>공룡 정보</title>
+    <link rel="stylesheet" href="/css/dnoDetails.css">
+</head>
+<body>
+<div class="container">
+    <div class="info-container">
+        <h1 th:text="${dinosaur.dinoName}"></h1>
+        <div class="row">
+            <div class="col-md-6">
+                <p><span>종:</span> <span th:text="${dinosaur.dinoSpecies}"></span></p>
+                <p><span>시대:</span> <span th:text="${dinosaur.dinoEra}"></span></p>
+                <p><span>분류:</span> <span th:text="${dinosaur.dinoType}"></span></p>
+                <p><span>특징:</span> <span th:text="${dinosaur.dinoFeature}"></span></p>
+            </div>
+            <div class="col-md-6">
+                <p><span>크기:</span> <span th:text="${dinosaur.dinoSize}"></span>m</p>
+                <p><span>무게:</span> <span th:text="${dinosaur.dinoWeight}"></span>kg</p>
+                <p><span>위험 레벨:</span> <span th:text="${dinosaur.dinoDangerLevel}"></span></p>
+                <p><span>건강 정보:</span> <span th:text="${dinosaur.dinoHealthStatus}"></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 이전 페이지로 돌아가는 버튼 -->
+<div class="container mt-3">
+    <a href="/dinosaurs" class="btn btn-secondary">이전 페이지로 돌아가기</a>
+</div>
+</body>
+</html>

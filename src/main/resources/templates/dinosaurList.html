@@ -2,106 +2,18 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>공룡 종류별 리스트</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <style>
-        body {
-            background-color: #f8f9fa;
-            padding: 20px;
-        }
-         h1 {
-            color: #007bff;
-            margin-bottom: 30px;
-            text-align: center; /* 제목 가운데 정렬 */
-            text-transform: uppercase; /* 텍스트 대문자 변환 */
-            font-weight: bold; /* 글꼴 굵게 */
-            font-size: 2rem; /* 제목 크기 */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.0); /* 텍스트 그림자 */
-        }
-        .card {
-            margin-bottom: 20px;
-        }
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #007bff; /* 기본 배경 색상 */
-            color: #fff;
-            transition: background-color 0.3s ease;
-        }
-        .card-header:hover {
-            background-color: #0056b3; /* 호버 배경 색상 */
-        }
-        .card-body {
-            padding: 0;
-        }
-        .card-title {
-            text-align: center;
-        }
-        .list-group-item {
-            border-radius: 0;
-            border-color: rgba(0, 0, 0, 0.125);
-        }
-        .toggle-button {
-            margin-right: 10px;
-            padding: 5px 10px;
-            font-size: 12px;
-        }
-        .btn-toggle {
-            margin-left: auto;
-            font-size: 12px;
-        }
-        
-        .container {
-            background-color: #fff; /* 리스트 컨테이너 배경 색상 */
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+    <title>MESOZOIC PARK 공룡 부서</title>
+    <link rel="stylesheet" href="css/dnoList.css">   
 </head>
 <body>
+<h1>MESOZOIC PARK 공룡 부서</h1>
 <div class="container">
-    <h1>공룡 종류별 리스트</h1>
-    <div th:each="entry : ${dinosaurMap}">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="card-title" th:text="${entry.key}"></h5>
-                <!-- 숨기기/표시하기 버튼 -->
-                <button class="btn btn-primary toggle-button" onclick="toggleList(this)">▼</button>
-            </div>
-            <div class="card-body" style="display: block;">
-                <ul class="list-group list-group-flush">
-                    <li th:each="dinosaur : ${entry.value}" class="list-group-item">
-                        <a th:href="@{/dinosaurs/details/{id}(id=${dinosaur.id})}" th:text="${dinosaur.dinoName}"></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- 메인 화면으로 돌아가는 버튼 -->
-    <button class="btn btn-secondary" onclick="goToMainPage()">메인 화면으로 돌아가기</button>
+   <a href="/dinosaurs/type/육각류" class="box box-dino1" data-text="육각류">육각류</a>
+   <a href="/dinosaurs/type/식각류" class="box box-dino2" data-text="식각류">식각류</a>
+   <a href="/dinosaurs/type/곡룡류" class="box box-dino3" data-text="곡룡류">곡룡류</a>
+   <a href="/dinosaurs/type/검룡류" class="box box-dino4" data-text="검룡류">검룡류</a>
+   <a href="/dinosaurs/type/후각류" class="box box-dino5" data-text="후각류">후각류</a>
 </div>
-<!-- JavaScript 코드 -->
-<script>
-    function toggleList(button) {
-        var cardBody = button.parentNode.parentNode.getElementsByClassName("card-body")[0];
-        if (cardBody.style.display === "none") {
-            cardBody.style.display = "block";
-            button.innerText = "▲ 숨기기";
-        } else {
-            cardBody.style.display = "none";
-            button.innerText = "▼ 표시하기";
-        }
-    }
-    
-    // 메인 화면으로 돌아가는 함수
-    function goToMainPage() {
-        window.location.href = "/eden"; // 메인 화면의 URL로 변경
-    }
-</script>
+
 </body>
 </html>
