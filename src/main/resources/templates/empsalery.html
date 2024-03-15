@@ -6,12 +6,13 @@
     <link rel="stylesheet" th:href="@{/css/empProfile.css}">
 </head>
 <body>
+<header class="section__header"><a th:href="@{/eden}"><img th:src="@{/img/logo_2_1.png}" class="header-logo"></a></header>
 <h2>Sales | 영업팀</h2>
 <div class="cards-container">
     <div th:each="employee, iterStat : ${employees}" th:if="${iterStat.count <=16 and iterStat.count >12}">
         <div class="card" data-state="#about">
             <div class="card-header">
-                <div class="card-cover" style="background-image: url('https://images.unsplash.com/photo-1549068106-b024baf5062d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80')"></div>
+                <div class="card-cover"></div>
                 <img class="card-avatar" th:src="@{/img/{id}.jpg(id=${employee.id})}" alt="avatar"/>
                 <h1 class="card-fullname" th:text="${employee.empName}"></h1>
                 <h2 class="card-jobtitle" th:text="${employee.empPosition}"></h2>
@@ -23,7 +24,7 @@
                         <p class="card-desc">
                             <span th:text="${employee.empWorkYear} + '년차'"></span><br>
                             <span th:text="${employee.empDepart}"></span><br>
-                            <span th:text="${employee.empBirth}"></span>
+                            <span th:text="${employee.empBirth}"></span>x
                         </p>
                     </div>
                     <div class="card-social">

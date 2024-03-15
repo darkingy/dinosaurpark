@@ -3,7 +3,9 @@
 * {
   box-sizing: border-box;
 }
+
 body {
+  background-image: url('../img/background_2000.jpg');
   display: flex;
   flex-direction: column; /* body의 자식 요소들을 세로로 정렬 */
   align-items: center; /* 센터 정렬 */
@@ -15,6 +17,22 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+}
+
+header {
+	position: fixed;
+	top: 30px;
+	left: 30px;
+	width: 200px;
+	height: 50px;
+	z-index: 1000;
+}
+
+
+h2 {
+	font-size: 50px;
+	color: white;
+	font-family: "Arial";
 }
 
 .cards-container {
