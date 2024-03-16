@@ -29,6 +29,8 @@ sections.forEach((section, index) => {
   observer.observe(section);
 });
 
+//수정 필수
+//앵커 버튼 눌렀을 때, 자연스러운 스크롤 액션
 document.addEventListener("DOMContentLoaded", function() {
   // 모든 앵커 링크를 선택합니다.
   const links = document.querySelectorAll('a[href^="#"]');
@@ -51,6 +53,8 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
+//수정 필수
+//메인 페이지의 로고가 스크롤 해서 아래로 내려가면 로고가 내비게이션 바로 이동하는 액션
 document.addEventListener("DOMContentLoaded", function() {
   const heroLogo = document.querySelector('.hero__logo');
   const navLogo = document.querySelector('.nav__logo img');
