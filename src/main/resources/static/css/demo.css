@@ -1,3 +1,5 @@
+
+
 @import url("https://fonts.googleapis.com/css?family=Anton|Overpass+Mono:600&display=swap");
 /* Variables */
 /* Mixins and functions */
@@ -325,6 +327,7 @@ a {
 }
 
 .hero__logo {
+  overflow:scroll;
   position: absolute;
   -o-object-fit: contain;
      object-fit: contain;
