@@ -10,4 +10,10 @@ public class MainController {
     public String list() {
         return "demo";
     }
+
+    //루트 디렉터리 localhost:8080만 입력해도 eden 홈페이지로 넘어감
+    @GetMapping("/")
+    public String root() {
+        return "redirect:/eden";
+    }
 }
