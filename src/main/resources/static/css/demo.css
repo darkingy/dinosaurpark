@@ -1,6 +1,6 @@
-
-
 @import url("https://fonts.googleapis.com/css?family=Anton|Overpass+Mono:600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Figtree&display=swap");
+
 /* Variables */
 /* Mixins and functions */
 /* Reset */
@@ -8,13 +8,9 @@
   box-sizing: border-box;
 }
 
+/* html내 링크를 눌렀을 때의 스크롤 형식 */
 html {
   scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: "Overpass Mono", monospace;
 }
 
 img {
@@ -32,6 +28,7 @@ ul {
 
 /* Typography */
 body {
+  margin: 0;
   font-family: "Overpass Mono", monospace;
 }
 
@@ -44,6 +41,7 @@ h3 {
   line-height: 1;
 }
 
+/*현재 h1태그를 사용하는 것이 없으므로, 굳이 사용하지 않으면 삭제*/
 h1 {
   font-size: 3rem;
 }
@@ -225,6 +223,7 @@ a {
   }
 }
 
+/* section__main-title--left, right 부분은 우리 디자인에는 안쓰였으므로 개인화 마치면 삭제 */
 .section__main-title--left {
   grid-column: 2/-2;
   grid-row: 4/6;
@@ -240,6 +239,7 @@ a {
   }
 }
 
+/*section__img 이하 동일 */
 .section__img {
   max-width: 18.75rem;
   margin-bottom: 1.875rem;
@@ -257,6 +257,7 @@ a {
   grid-column: 1/-4;
 }
 
+/*section__intro 이하 동일 */
 .section__intro {
   text-align: center;
   max-width: 50ch;
@@ -336,6 +337,7 @@ a {
   filter: drop-shadow(3px 3px 20px #FFFFF0);
 }
 
+/*gentle-giants 이하 동일 */
 .gentle-giants {
   background-color: rgba(43, 138, 130, 0.8);
 }
@@ -344,27 +346,6 @@ a {
   grid-column: 3/6;
   grid-row: 6/8;
 }
-
-.gentle-giants__img {
-  grid-column: 4/-1;
-  grid-row: 1/-1;
-}
-
-.carnivore-kingdom__intro {
-  grid-column: -6/-3;
-  grid-row: 6/8;
-}
-
-.aerial-adventure {
-  background-color: rgba(138, 43, 68, 0.8);
-}
-
-.aerial-adventure__intro {
-  grid-column: 3/6;
-  grid-row: 6/8;
-}/*# sourceMappingURL=demo.css.map */
-
-@import url("https://fonts.googleapis.com/css2?family=Figtree&display=swap");
 
 /* 공통 스타일 */
 .section-style {
