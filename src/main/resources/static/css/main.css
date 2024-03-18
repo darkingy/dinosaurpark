@@ -184,10 +184,11 @@ a {
 
 .nav__logo a {
     display: block;
-    width: 200px;
-    height: 150px;
+    width: 150px;
+    height: 100px;
     text-indent: -9999px;
     filter: drop-shadow(3px 3px 20px #FFFFF0);
+    margin-bottom: 20px;
 }
 
 .nav__logo a:hover,
