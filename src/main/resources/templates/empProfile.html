@@ -6,10 +6,10 @@
     <title th:text="${emptype}">Department Type</title>
 
     <!--CSS 파일 적용-->
-    <link rel="stylesheet" th:href="@{/css/empProfile.css}">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
 </head>
 
-<body>
+<body class="profile">
     <header data-header class="page-header">
         <nav>
             <ul class="nav__list">
@@ -22,19 +22,19 @@
                 <li class="nav__item">
                     <a th:href="@{/eden#a}">A</a>
                 </li>
-                <li class="nav__logo">
-                    <a th:href="@{/eden}"><img th:src="@{/img/logo_2_1.png}" class="header-logo"></a>
+                <li class="nav__item nav__logo">
+                    <a th:href="@{/eden}"><img th:src="@{/img/logo_1.png}" class="header-logo"></a>
                 </li>
             </ul>
         </nav>
     </header>
-    <div th:switch="${emptype}">
-        <h2 th:case="'가이드팀'">Guide | 가이드</h2>
-        <h2 th:case="'보안팀'">Security | 보안요원</h2>
-        <h2 th:case="'사육사팀'">ZooKeeper | 사육사</h2>
-        <h2 th:case="'수의사팀'">Veterinarian | 수의사</h2>
-        <h2 th:case="'영업팀'">Sales | 영업팀</h2>
-        <h2 th:case="*">없습니다</h2>
+    <div th:switch="${emptype}" class="department">
+        <p th:case="'가이드팀'">Guide | 가이드</p>
+        <p th:case="'보안팀'">Security | 보안요원</p>
+        <p th:case="'사육사팀'">ZooKeeper | 사육사</p>
+        <p th:case="'수의사팀'">Veterinarian | 수의사</p>
+        <p th:case="'영업팀'">Sales | 영업팀</p>
+        <p th:case="*">없습니다</p>
     </div>
     <div class="cards-container">
         <div th:each="employee, iterStat : ${employees}">
