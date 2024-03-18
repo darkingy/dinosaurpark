@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500|Jost:400,500,600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Anton|Overpass+Mono:600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Figtree&display=swap");
 
 * {
   box-sizing: border-box;
@@ -19,7 +21,7 @@ body {
   background-attachment: fixed;
 }
 
-header {
+.section_header {
 	position: fixed;
 	top: 30px;
 	left: 30px;
@@ -28,6 +30,40 @@ header {
 	z-index: 1000;
 }
 
+.page-header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+nav {
+  font-family: "Overpass Mono", monospace;
+
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__list {
+  display: flex;
+  height: 5rem;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.625rem 1.25rem;
+}
+
+.nav__item a {
+  color: white;
+  display: block;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+}
+.nav__item a:hover, .nav__item a:focus {
+  text-decoration: underline;
+}
 
 h2 {
 	font-size: 50px;

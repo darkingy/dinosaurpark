@@ -4,11 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${emptype}">Department Type</title>
+
+    <!--CSS 파일 적용-->
     <link rel="stylesheet" th:href="@{/css/empProfile.css}">
 </head>
 
 <body>
-    <header class="section__header"><a th:href="@{/eden}"><img th:src="@{/img/logo_2_1.png}" class="header-logo"></a>
+    <header class="section_header"><a th:href="@{/eden}"><img th:src="@{/img/logo_2_1.png}" class="header-logo"></a>
+    </header>
+    <header data-header class="page-header">
+        <nav>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a th:href="@{/eden#dinosaur}">Dinosaurs</a>
+                </li>
+                <li class="nav__item">
+                    <a th:href="@{/eden#employee}">Employees</a>
+                </li>
+            </ul>
+        </nav>
     </header>
     <div th:switch="${emptype}">
         <h2 th:case="'가이드팀'">Guide | 가이드</h2>
