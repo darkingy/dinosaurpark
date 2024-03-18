@@ -10,8 +10,6 @@
 </head>
 
 <body>
-    <header class="section_header"><a th:href="@{/eden}"><img th:src="@{/img/logo_2_1.png}" class="header-logo"></a>
-    </header>
     <header data-header class="page-header">
         <nav>
             <ul class="nav__list">
@@ -20,6 +18,12 @@
                 </li>
                 <li class="nav__item">
                     <a th:href="@{/eden#employee}">Employees</a>
+                </li>
+                <li class="nav__item">
+                    <a th:href="@{/eden#a}">A</a>
+                </li>
+                <li class="nav__logo">
+                    <a th:href="@{/eden}"><img th:src="@{/img/logo_2_1.png}" class="header-logo"></a>
                 </li>
             </ul>
         </nav>

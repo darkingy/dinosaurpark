@@ -21,14 +21,27 @@ body {
   background-attachment: fixed;
 }
 
-.section_header {
-	position: fixed;
-	top: 30px;
-	left: 30px;
-	width: 200px;
-	height: 50px;
-	z-index: 1000;
+body::before {
+  content: "";
+  position: fixed; /* 또는 absolute; 페이지에 따라 다를 수 있음 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* 어두운 레이어 시작 */
+  z-index: -1; /* 배경 뒤에 위치하도록 설정 */
+  animation: fadeBackgroundBrightness 5s ease forwards; /* 애니메이션 적용 */
 }
+
+@keyframes fadeBackgroundBrightness {
+  0% {
+    background: rgba(0, 0, 0, 0.7); /* 시작할 때 배경색 어둡기 */
+  }
+  100% {
+    background: rgba(0, 0, 0, 0.25); /* 끝날 때 배경색 밝기 */
+  }
+}
+
 
 .page-header {
   position: fixed;
