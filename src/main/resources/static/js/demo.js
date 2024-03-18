@@ -31,11 +31,8 @@ sections.forEach((section, index) => {
 
 //수정 필수
 //앵커 버튼 눌렀을 때, 자연스러운 스크롤 액션
-document.querySelector('.nav__list').addEventListener('click', e=>{
-  if(e.target.nodeName === 'LI') {
-    let id_value = e.target.dataset.link;
-    document.querySelector(id_value).scrollIntoView({behavior : 'smooth'});
-  }
+document.querySelector('.nav__item').addEventListener('click', e=>{
+  document.querySelector('#dinosaur').scrollIntoView({behavior:'smooth', block:'center'});
 });
 
 //수정 필수
