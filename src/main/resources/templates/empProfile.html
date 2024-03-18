@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title th:text="${emptype}">Department Type</title>
-
     <!--CSS 파일 적용-->
     <link rel="stylesheet" th:href="@{/css/main.css}">
 </head>
@@ -23,7 +22,7 @@
                     <a th:href="@{/eden#a}">A</a>
                 </li>
                 <li class="nav__item nav__logo">
-                    <a th:href="@{/eden}"><img th:src="@{/img/logo_1.png}" class="header-logo"></a>
+                    <a th:href="@{/eden}"><img th:src="@{/img/logo_1.png}" alt="logo"></a>
                 </li>
             </ul>
         </nav>
