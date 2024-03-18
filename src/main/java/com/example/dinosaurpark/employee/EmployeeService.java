@@ -3,6 +3,9 @@ package com.example.dinosaurpark.employee;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.ArrayList;
 
 import org.springframework.stereotype.Service;
 
@@ -69,5 +72,18 @@ public class EmployeeService {
 
 	public Employee getEmployeeById(Integer id) {
 		return EMPLOYEES.stream().filter(employee -> id.equals(employee.getId())).findFirst().orElse(null);
+	}
+
+	public Map<String, List<Employee>> getEmployeeByType() {
+		Map<String, List<Employee>> employeeMap = new HashMap<>();
+
+		for (Employee employee : EMPLOYEES) {
+			String emptype = employee.getEmpDepart();
+			List<Employee> emptypeList = employeeMap.getOrDefault(emptype, new ArrayList<>());
+			emptypeList.add(employee);
+			employeeMap.put(emptype, emptypeList);
+		}
+
+		return employeeMap;
 	}
 }
