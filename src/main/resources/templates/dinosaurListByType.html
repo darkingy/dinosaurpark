@@ -3,10 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>유형별 공룡 정보</title>
-    <link rel="stylesheet" th:href="@{/css/dnoDetails.css}">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
 </head>
-<body>
-    <header class="section__header"><a th:href="@{/eden}"><img th:src="@{/img/logo_2_1.png}" class="header-logo"></a>
+<body class="profile">
+    <header data-header class="page-header">
+        <nav>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a th:href="@{/eden#dinosaur}">Dinosaurs</a>
+                </li>
+                <li class="nav__item">
+                    <a th:href="@{/eden#employee}">Employees</a>
+                </li>
+                <li class="nav__item">
+                    <a th:href="@{/eden#a}">A</a>
+                </li>
+                <li class="nav__item nav__logo">
+                    <a th:href="@{/eden}"><img th:src="@{/img/logo_1.png}" class="header-logo"></a>
+                </li>
+            </ul>
+        </nav>
     </header>
     <div class="container">
         <h1 class="info-title">유형별 공룡 정보 - <span th:text="${type}"></span></h1>
