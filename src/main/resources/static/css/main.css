@@ -444,9 +444,10 @@ a {
     min-height: 200px;
 }
 
-.section-style h3 {
+.section-style p {
     color: white;
     text-align: center;
+    font-size: 50px;
     margin: 5px 5px;
     /* 상단 여백 */
 }
@@ -459,7 +460,7 @@ a {
     gap: 1em;
     width: 800px;
     height: 500px;
-    transition: all 400ms;
+    transition: grid-template-columns 0.8s ease-in-out;
 }
 
 .section-style .box {
@@ -482,11 +483,13 @@ a {
 /* 호버 효과 */
 .section-style .container:hover .box {
     filter: grayscale(100%) opacity(24%);
+    transition: filter 0.5s ease-in-out;
 }
 
 .section-style .container .box:hover {
     filter: grayscale(0%);
     opacity: 1;
+    transition: filter 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 /* 특정 섹션에만 적용되는 스타일 */
@@ -551,25 +554,44 @@ a {
     transform: translateY(16px);
 }
 
+.section-style .container:has(.box-1:hover),
+.section-style .container:has(.box-2:hover),
+.section-style .container:has(.box-3:hover),
+.section-style .container:has(.box-4:hover),
+.section-style .container:has(.box-5:hover) {
+    transition: grid-template-columns 0.3s ease-in-out;
+}
+
+.section-style .box-1,
+.section-style .box-2,
+.section-style .box-3,
+.section-style .box-4,
+.section-style .box-5 {
+    transition: transform 0.8s ease-in-out;
+}
+
 .section-style .box::after {
     content: attr(data-text);
     position: absolute;
     bottom: 20px;
     background-color: rgb(10, 55, 17);
     color: #ffffff;
-    padding: 10px 10px 10xp 14px;
+    padding: 10px 10px 10px 14px;
     letter-spacing: 4px;
     text-transform: uppercase;
     transform: translateY(60px);
     opacity: 0;
-    transition: all 400ms;
-    font-family: "Arial";
+    transition: all 0.5s ease-in-out;
 }
 
 .section-style .box:hover::after {
     transform: translateY(0);
     opacity: 1;
     transition-delay: 50ms;
+}
+
+.section-style .container:not(:has(.box:hover)) {
+    transition: grid-template-columns 0.8s ease-in-out; /* 작아질 때 느리게 전환 */
 }
 
 /* 프로필 스타일 */
