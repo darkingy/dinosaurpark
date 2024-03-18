@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${type}">Dinosaur Type</title>
+    <link rel="stylesheet" th:href="@{/css/dino.css}">
+</head>
+
+<body class="profile">
+    <header data-header class="page-header">
+        <nav>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a th:href="@{/eden#dinosaur}">Dinosaurs</a>
+                </li>
+                <li class="nav__item">
+                    <a th:href="@{/eden#employee}">Employees</a>
+                </li>
+                <li class="nav__item">
+                    <a th:href="@{/eden#a}">a</a>
+                </li>
+                <li class="nav__item nav__logo">
+                    <a th:href="@{/eden}"><img th:src="@{/img/logo_1.png}" class="header-logo"></a>
+                </li>
+            </ul>
+        </nav>
+</body>
+
+</html>
