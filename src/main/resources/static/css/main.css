@@ -460,7 +460,7 @@ a {
     gap: 1em;
     width: 800px;
     height: 500px;
-    transition: grid-template-columns 0.8s ease-in-out;
+    transition: grid-template-columns 0.s ease-in-out;
 }
 
 .section-style .box {
