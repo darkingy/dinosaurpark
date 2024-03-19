@@ -20,12 +20,13 @@ public class DinosaurController {
         this.dinosaurService = dinosaurService;
     }
     
-    //예를 들어, 이페이지는 이제 자동으로 /dinosaurs/type/{type}으로 넘어가짐
-    @GetMapping(value = "/type/{type}")
-    public String listDinosaursByType(Model model, @PathVariable("type") String type) {
+    //예를 들어, 이페이지는 이제 자동으로 /dinosaurs/dino/{type}으로 넘어가짐
+    @GetMapping(value = "/dino/{type}")
+    public String listDinoByType(Model model, @PathVariable("type") String type) {
         List<Dinosaur> dinosaurs = dinosaurService.getDinosaursByType().get(type);
         model.addAttribute("dinosaurs", dinosaurs); // 공룡 정보를 모델에 추가
         model.addAttribute("type", type); // 공룡 종류를 모델에 추가
-        return "dinosaurListByType"; // 정보 페이지로 이동
+        return "dinoProfile"; // 정보 페이지로 이동
     }
+    
 }
