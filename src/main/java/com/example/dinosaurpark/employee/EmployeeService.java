@@ -15,17 +15,20 @@ public class EmployeeService {
 	private static final List<Employee> EMPLOYEES = Arrays.asList(
 
 			// 1
-			new Employee(1, "이재일", "팀장", "사육사팀", "leader@example.com", "(123) 456-789", "서울시 강남구", LocalDate.of(1990, 5, 15),
+			new Employee(1, "이재일", "팀장", "사육사팀", "leader@example.com", "(123) 456-789", "서울시 강남구",
+					LocalDate.of(1990, 5, 15),
 					7),
 			new Employee(2, "윤선용", "대리", "사육사팀", "seonyong@example.com", "(987) 654-321", "서울시 강남구",
 					LocalDate.of(1992, 8, 23), 5),
 			new Employee(3, "김민균", "사원", "사육사팀", "minkyun@example.com", "(111) 222-333", "서울시 강남구",
 					LocalDate.of(1993, 11, 7), 2),
-			new Employee(4, "오지현", "인턴", "사육사팀", "jihyun@example.com", "(444) 555-666", "서울시 강남구", LocalDate.of(1991, 3, 29),
+			new Employee(4, "오지현", "인턴", "사육사팀", "jihyun@example.com", "(444) 555-666", "서울시 강남구",
+					LocalDate.of(1991, 3, 29),
 					0),
 
 			// 팀 2
-			new Employee(5, "김무원", "전문의", "수의사팀", "moowon@example.com", "(777) 888-999", "서울시 강서구", LocalDate.of(1988, 7, 12),
+			new Employee(5, "김무원", "전문의", "수의사팀", "moowon@example.com", "(777) 888-999", "서울시 강서구",
+					LocalDate.of(1988, 7, 12),
 					8),
 			new Employee(6, "선승화", "전공의", "수의사팀", "seunghwa@example.com", "(222) 333-444", "서울시 강서구",
 					LocalDate.of(1995, 1, 18), 5),
@@ -35,7 +38,8 @@ public class EmployeeService {
 					LocalDate.of(1995, 12, 20), 0),
 
 			// 팀 3
-			new Employee(9, "백현준", "팀장", "보안팀", "hyunjune@example.com", "(333) 444-555", "서울시 서초구", LocalDate.of(1987, 4, 3),
+			new Employee(9, "백현준", "팀장", "보안팀", "hyunjune@example.com", "(333) 444-555", "서울시 서초구",
+					LocalDate.of(1987, 4, 3),
 					12),
 			new Employee(10, "성시언", "차장", "보안팀", "sion@example.com", "(666) 777-888", "서울시 서초구",
 					LocalDate.of(1989, 10, 17), 9),
@@ -45,7 +49,8 @@ public class EmployeeService {
 					LocalDate.of(1986, 6, 21), 0),
 
 			// 팀 4
-			new Employee(13, "김태호", "팀장", "영업팀", "taeho@example.com", "(444) 555-666", "서울시 송파구", LocalDate.of(1990, 8, 30),
+			new Employee(13, "김태호", "팀장", "영업팀", "taeho@example.com", "(444) 555-666", "서울시 송파구",
+					LocalDate.of(1990, 8, 30),
 					7),
 			new Employee(14, "임현빈", "대리", "영업팀", "hyunbin@example.com", "(777) 888-999", "서울시 송파구",
 					LocalDate.of(1991, 11, 14), 4),

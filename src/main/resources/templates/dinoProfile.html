@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${type}">Dinosaur Type</title>
-    <link rel="stylesheet" th:href="@{/css/dino.css}">
+    <link rel="stylesheet" th:href="@{/css/dinopro.css}">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
 </head>
 
 <body class="profile">
@@ -26,13 +27,45 @@
             </ul>
         </nav>
     </header>
-    <div th:switch="${type}" class="dinoType">
-        <p th:case="'육각류'">Hexapoda | 육각류</p>
-        <p th:case="'식각류'">Hexapoda | 식각류</p>
-        <p th:case="'곡룡류'">Hexapoda | 곡룡류</p>
-        <p th:case="'검룡류'">Hexapoda | 검룡류</p>
-        <p th:case="'후각류'">Hexapoda | 후각류</p>
+    <div th:switch="${type}" class="type">
+        <p th:case="'용각류'">Sauropod | 용각류</p>
+        <p th:case="'수각류'">Theropod | 수각류</p>
+        <p th:case="'각룡류'">Ceratopsia | 각룡류</p>
+        <p th:case="'조각류'">Ornithopoda | 조각류</p>
+        <p th:case="'검룡류'">Stegosauria | 검룡류</p>
         <p th:case="*">없습니다</p>
+    </div>
+    <div class="cards-container">
+        <div th:each="dino : ${dinosaurs}">
+            <div class="card">
+                <div class="card-image">
+                    <div class="dino-contain">
+                        <div class="dino-header">
+                            <span th:text="${dino.dinoSpecies}"></span>
+                        </div>
+                        <div class="dino-main">
+                            <p class="subject">Danger Level</p>
+                            <p class="answer" th:classappend="${dino.dinoDangerLevel > 6} ? 'high-alarm'"><span
+                                    th:text="${dino.dinoDangerLevel}"></span></p>
+                            <p class="subject">Era</p>
+                            <p class="answer"><span th:text="${dino.dinoEra}"></span></p>
+                            <p class="subject">Size</p>
+                            <p class="answer"><span th:text="${dino.dinoSize}"></span></p>
+                            <p class="subject">Weight</p>
+                            <p class="answer"><span th:text="${dino.dinoWeight}"></span></p>
+                            <p class="subject">Health Info</p>
+                            <p class="answer" th:classappend="${dino.dinoHealthStatus < 6} ? 'high-alarm'"><span
+                                    th:text="${dino.dinoHealthStatus}"></span></p>
+                            <p class="subject">Feature</p>
+                            <p class="answer"><span class="Feature" th:text="${dino.dinoFeature}"></span></p>
+                        </div>
+                        <div>
+                            <img class="dino-image" th:src="@{/img/{id}.png(id=${dino.id})}" alt="dino-img" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
