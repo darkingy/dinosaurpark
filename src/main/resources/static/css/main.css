@@ -30,7 +30,7 @@ ul {
 /* Typography */
 body {
     margin: 0;
-    font-family: "Overpass Mono", monospace;
+    font-family: "Nanum Gothic";
 }
 
 /* 공룡, 직원 프로필 스타일 */
@@ -305,17 +305,6 @@ a {
 .section__main-title--left {
     grid-column: 2/-2;
     grid-row: 4/6;
-}
-
-.section__main-title--right {
-    grid-column: 2/-2;
-    grid-row: 4/6;
-}
-
-@media (min-width: 60em) {
-    .section__main-title--right {
-        text-align: right;
-    }
 }
 
 /*section__img 이하 동일 */
