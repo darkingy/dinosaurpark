@@ -30,11 +30,11 @@ public class DinosaurService {
             new Dinosaur(14, "아무로사우루스", "Amurosaurus", "백악기", "조각류", "긴 목과 작은 머리", 9.0, 2000.0, 6, 8),
             new Dinosaur(15, "파라사우롤로푸스", "Parasaurolophus", "백악기", "조각류", "긴 크레스트를 가진 코뿔소류", 9.0, 3000.0, 6, 8),
             new Dinosaur(16, "이구아노돈", "Iguanodon", "백악기", "조각류", "이족보행보다 사족보행을 즐겨함", 9.5, 3800.0, 8, 2),
-
-            new Dinosaur(17, "안킬로사우루스", "Ankylosaurus", "백악기", "검룡류 ", "몸통 주위에 방패나 돌출된 판", 6.0, 4000.0, 9, 7),
-            new Dinosaur(18, "스테고사우루스", "Stegosaurus", "쥐라기", "검룡류 ", "등에 돌출된 돌기와 돌가죽", 9.0, 2500.0, 7, 5),
-            new Dinosaur(19, "켄트로사우루스", "Kentrosaurus", "쥐라기", "검룡류", "등에 여러개의 가시가 인상적", 4.2, 1200.0, 8, 8),
-            new Dinosaur(20, "투오지앙고사우루스", "Tuojiangosaurus", "쥐라기", "검룡류", "전체적인 체형이 앞으로 쏠려 낮은 키의 식물을 섭취함", 5.7, 2800, 7, 8)            
+			
+            new Dinosaur(17, "안킬로사우루스", "Ankylosaurus", "백악기", "검룡류", "몸통 주위에 방패나 돌출된 판", 6.0, 4000.0, 9, 7),
+            new Dinosaur(18, "스테고사우루스", "Stegosaurus", "쥐라기", "검룡류", "등에 돌출된 돌기와 돌가죽", 9.0, 2500.0, 7, 5),
+			new Dinosaur(19, "켄트로사우루스", "Kentrosaurus", "쥐라기", "검룡류", "등에 여러개의 가시가 인상적", 4.2, 1200.0, 8, 8),
+            new Dinosaur(20, "투오지앙고사우루스", "Tuojiangosaurus", "쥐라기", "검룡류", "전체적인 체형이 앞으로 쏠려 낮은 키의 식물을 섭취함", 5.7, 2800.0, 7, 8)
 	    );
 
 	public List<Dinosaur> getAllDinosaurs() {

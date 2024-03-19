@@ -36,7 +36,7 @@
         <p th:case="*">없습니다</p>
     </div>
     <div class="cards-container">
-        <div th:each="employee, iterStat : ${employees}">
+        <div th:each="employee : ${employees}">
             <div class="card" data-state="#about">
                 <div class="card-header">
                     <div class="card-cover"></div>

@@ -76,7 +76,10 @@ public class EmployeeService {
 	}
 
 	public Employee getEmployeeById(Integer id) {
-		return EMPLOYEES.stream().filter(employee -> id.equals(employee.getId())).findFirst().orElse(null);
+		return EMPLOYEES.stream()
+				.filter(employee -> id.equals(employee.getId()))
+				.findFirst()
+				.orElse(null);
 	}
 
 	public Map<String, List<Employee>> getEmployeeByType() {
