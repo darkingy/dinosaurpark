@@ -485,7 +485,6 @@ main::-webkit-scrollbar-track {
 }
 
 /* 특정 섹션에만 적용되는 스타일 */
-
 .section-style .container:has(.box-1:hover) {
     grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
 }
@@ -587,7 +586,7 @@ main::-webkit-scrollbar-track {
     /* 작아질 때 느리게 전환 */
 }
 
-/* Profile.html에 적용 */
+/* ...Profile.html에 적용 */
 /* 공룡, 직원 프로필 스타일 */
 .profile {
     background-image: url('../img/background_2000.jpg');
@@ -640,7 +639,7 @@ main::-webkit-scrollbar-track {
     font-weight: 400;
 }
 
-/* 프로필 스타일 */
+/* empProfile.html 스타일 */
 .cards-container {
     display: flex;
     flex-wrap: wrap;
@@ -966,8 +965,7 @@ main::-webkit-scrollbar-track {
     transition: 0.3s;
 }
 
-/*공룡 리스트 스타일*/
-
+/*dinoProfile.html 스타일*/
 .dino {
     display: flex;
     flex-wrap: wrap;
@@ -984,7 +982,6 @@ main::-webkit-scrollbar-track {
     flex: none; /* flex 속성을 무시하거나 다른 값으로 재정의 */
     width: auto; /* width 값을 원하는 대로 재정의 */
 }
-
 
 .dino-gallery {
     --size: 150px;
