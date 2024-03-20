@@ -991,6 +991,11 @@ main::-webkit-scrollbar-track {
     justify-content: center;
 }
 
+.dino-gallery:hover {
+    filter: drop-shadow(3px 3px 20px #FFFFF0);
+    cursor: pointer;
+}
+
 .type-img {
     max-height: 520px;
     max-width: 500px;
