@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title th:text="${type}">Dinosaur Type</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/dinopro.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
 </head>
 
@@ -35,38 +35,48 @@
         <p th:case="'검룡류'">Stegosauria | 검룡류</p>
         <p th:case="*">없습니다</p>
     </div>
-    <div class="cards-container">
-        <div th:each="dino : ${dinosaurs}">
-            <div class="card">
-                <div class="card-image">
-                    <div class="dino-contain">
-                        <div class="dino-header">
-                            <span th:text="${dino.dinoSpecies}"></span>
-                        </div>
-                        <div class="dino-main">
-                            <p class="subject">Danger Level</p>
-                            <p class="answer" th:classappend="${dino.dinoDangerLevel > 6} ? 'high-alarm'"><span
-                                    th:text="${dino.dinoDangerLevel}"></span></p>
-                            <p class="subject">Era</p>
-                            <p class="answer"><span th:text="${dino.dinoEra}"></span></p>
-                            <p class="subject">Size</p>
-                            <p class="answer"><span th:text="${dino.dinoSize}"></span></p>
-                            <p class="subject">Weight</p>
-                            <p class="answer"><span th:text="${dino.dinoWeight}"></span></p>
-                            <p class="subject">Health Info</p>
-                            <p class="answer" th:classappend="${dino.dinoHealthStatus < 6} ? 'high-alarm'"><span
-                                    th:text="${dino.dinoHealthStatus}"></span></p>
-                            <p class="subject">Feature</p>
-                            <p class="answer"><span class="Feature" th:text="${dino.dinoFeature}"></span></p>
-                        </div>
-                        <div>
-                            <img class="dino-image" th:src="@{/img/{id}.png(id=${dino.id})}" alt="dino-img" />
+    <div class="dino">
+        <div th:each="dino : ${dinosaurs}" class="dinos">
+            <article class="dino-gallery">
+                <img class="type-img" th:src="@{/img/{id}.png(id=${dino.id})}">
+            </article>
+            <div class="cards-container" style="display: none;">
+                <div class="card">
+                    <div class="card-image">
+                        <div class="dino-contain">
+                            <div class="dino-header">
+                                <span th:text="${dino.dinoSpecies}"></span>
+                            </div>
+                            <div class="dino-main">
+                                <p class="subject">Danger Level</p>
+                                <p class="answer" th:classappend="${dino.dinoDangerLevel > 6} ? 'high-alarm'">
+                                    <span th:text="${dino.dinoDangerLevel}"></span>
+                                </p>
+                                <p class="subject">Era</p>
+                                <p class="answer"><span th:text="${dino.dinoEra}"></span></p>
+                                <p class="subject">Size</p>
+                                <p class="answer"><span th:text="${dino.dinoSize}"></span></p>
+                                <p class="subject">Weight</p>
+                                <p class="answer"><span th:text="${dino.dinoWeight}"></span></p>
+                                <p class="subject">Health Info</p>
+                                <p class="answer" th:classappend="${dino.dinoHealthStatus < 6} ? 'high-alarm'">
+                                    <span th:text="${dino.dinoHealthStatus}"></span>
+                                </p>
+                                <p class="subject">Feature</p>
+                                <p class="answer"><span class="Feature" th:text="${dino.dinoFeature}"></span>
+                                </p>
+                            </div>
+                            <div>
+                                <img class="dino-image" th:src="@{/img/{id}.png(id=${dino.id})}" alt="dino-img" />
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
+    <script th:src="@{/js/dinoProfile.js}"></script>
 </body>
 
 </html>
