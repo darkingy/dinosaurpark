@@ -11,15 +11,18 @@
 <body class="profile">
     <header data-header class="page-header">
         <nav>
+            <button class="hamburger-menu">
+                &#9776; <!-- 햄버거 메뉴 아이콘 (세 개의 수평선) -->
+            </button>
             <ul class="nav__list">
+                <li class="nav__item">
+                    <a th:href="@{/eden#about}">Explore & Discover</a>
+                </li>
                 <li class="nav__item">
                     <a th:href="@{/eden#dinosaur}">Dinosaurs</a>
                 </li>
                 <li class="nav__item">
                     <a th:href="@{/eden#employee}">Employees</a>
-                </li>
-                <li class="nav__item">
-                    <a th:href="@{/eden#a}">A</a>
                 </li>
                 <li class="nav__item nav__logo">
                     <a th:href="@{/eden}"><img th:src="@{/img/logo_1.png}" alt="logo"></a>
@@ -122,6 +125,7 @@
         </div>
     </div>
     <script th:src="@{/js/empProfile.js}"></script>
+    <script th:src="@{/js/demo.js}"></script>
 </body>
 
 </html>

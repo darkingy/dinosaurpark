@@ -10,6 +10,7 @@
 /* Variables */
 /* Mixins and functions */
 /* Reset */
+/* 메인 스타일 */
 * {
     box-sizing: border-box;
 }
@@ -139,7 +140,7 @@ a {
     color: inherit;
 }
 
-/* Header */
+/*   */
 .page-header {
     position: fixed;
     z-index: 2;
@@ -174,10 +175,10 @@ main::-webkit-scrollbar-track {
 /* Nav */
 .nav__list {
     display: flex;
-    height: 5rem;
+    height: 4rem;   
     align-items: center;
     justify-content: flex-end;
-    padding: 0.625rem 1.25rem;
+    padding: 0.625rem 0;
 }
 
 .nav__item a {
@@ -212,9 +213,59 @@ main::-webkit-scrollbar-track {
     height: auto;
 }
 
+.hamburger-menu {
+    display: none; /* 기본적으로는 숨김 */
+    cursor: pointer;
+    font-size: 45px; /* 아이콘 크기 */
+    background: none;
+    border: none;
+    color: rgb(172, 236, 22); /* 아이콘 색상 */
+}
+
+@media (max-width: 700px) {
+    nav {
+        position: relative; /* 햄버거 메뉴의 위치 기준 */
+        top: 0.625rem;
+        left: 0.625rem;
+    }
+    
+    .hamburger-menu {
+        display: block; /* 작은 화면에서 버튼 표시 */
+        position: absolute; /* 로고 옆에 위치 */
+        z-index: 1000;
+    }
+
+    .nav__item {
+        display: none; /* 작은 화면에서 네비게이션 항목 숨김 */
+    }
+
+    .nav__item.nav__logo {
+        display: flex; /* 로고는 항상 표시 */
+        justify-content: flex-start; /* 로고를 왼쪽으로 정렬 */
+    }
+
+    .nav__list.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9); /* 어두운 배경 */
+        height: 100%;
+        width: 100%;
+        justify-content: flex-start; /* 내용을 상단에 정렬 */
+        align-items: flex-end; /* 내용을 우측에 정렬 */
+        padding: 20px;
+    }
+
+    .nav__list.active .nav__item {
+        display: block; /* active 상태일 때 네비게이션 항목 표시 */
+    }
+}
+
 /* Sections */
 .section {
-    color: white;
+    color: white;   
     position: relative;
     scroll-snap-align: center;
     display: flex;
@@ -985,7 +1036,7 @@ main::-webkit-scrollbar-track {
 }
 
 .subject {
-    color: #55a3d0;
+    color: #f1f541;
     font-size: 12px;
 }
 
