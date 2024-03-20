@@ -5,7 +5,7 @@
     font-family: "Nanum Gothic", sans-serif;
     font-weight: 400;
     font-style: normal;
-  }
+}
 
 /* Variables */
 /* Mixins and functions */
@@ -574,7 +574,8 @@ a {
 }
 
 .section-style .container:not(:has(.box:hover)) {
-    transition: grid-template-columns 0.8s ease-in-out; /* 작아질 때 느리게 전환 */
+    transition: grid-template-columns 0.8s ease-in-out;
+    /* 작아질 때 느리게 전환 */
 }
 
 /* 프로필 스타일 */
@@ -904,6 +905,42 @@ a {
 }
 
 /*공룡 리스트 스타일*/
+
+.dino {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    align-items: center;
+}
+
+.dinos {
+    flex: 1 1 50%;
+    width: 50%
+}
+
+.dinos .card {
+    flex: none; /* flex 속성을 무시하거나 다른 값으로 재정의 */
+    width: auto; /* width 값을 원하는 대로 재정의 */
+}
+
+
+.dino-gallery {
+    --size: 150px;
+    display: flex;
+    place-items: start center;
+    gap: 5px;
+    justify-content: center;
+}
+
+.type-img {
+    max-height: 520px;
+    max-width: 500px;
+}
+
+.show {
+    display: block;
+}
+
 .dino-contain {
     padding-top: 5px;
     padding-left: 20px;
@@ -917,7 +954,7 @@ a {
     background-size: cover;
 }
 
-.dino-header span{
+.dino-header span {
     color: white;
     position: static;
     font-size: 45px;
@@ -956,6 +993,6 @@ a {
 
 .high-alarm {
     color: red;
-    font-size: larger;  
+    font-size: larger;
     font-weight: 1000;
 }

@@ -13,7 +13,7 @@ const callback = (entries, observer) => {
 			target.classList.add("is-visible");
 		} else {
 			target.classList.remove("is-visible");
-		}
+		} 
   });
 };
 
@@ -37,3 +37,19 @@ document.querySelector('.nav__item').addEventListener('click', e=>{
 
 //수정 필수
 //메인 페이지의 로고가 스크롤 해서 아래로 내려가면 로고가 내비게이션 바로 이동하는 액션
+
+document.addEventListener("DOMContentLoaded", function() {
+  const sections = document.querySelectorAll(".scroll-section");
+
+  window.addEventListener('scroll', () => {
+      sections.forEach(section => {
+          const sectionTop = section.getBoundingClientRect().top;
+          const sectionHeight = section.offsetHeight;
+          if(window.scrollY > sectionTop - sectionHeight / 3) {
+              section.classList.add("is-visible");
+          } else {
+              section.classList.remove("is-visible");
+          }
+      });
+  });
+});
