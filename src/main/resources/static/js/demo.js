@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   };
-  
+
   const observer = new IntersectionObserver(callback, options);
 
   sections.forEach((section, index) => {
@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
       observer.observe(section);
     }
   });
+}); 
 
   //햄버거 효과
   document.addEventListener('DOMContentLoaded', function () {
@@ -88,4 +89,3 @@ document.addEventListener('DOMContentLoaded', function () {
       'Preparing Pages',
       'warning');
   });
-});

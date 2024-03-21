@@ -496,7 +496,7 @@ main::-webkit-scrollbar-track {
     }
 }
 
-@media (min-width: 801px) {
+@media (min-width: 851px) {
     .section-style .container {
         width: 800px;
         height: 500px;
