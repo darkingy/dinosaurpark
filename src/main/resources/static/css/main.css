@@ -519,6 +519,11 @@ main::-webkit-scrollbar-track {
 
 }
 
+.is-visible .section-style .box img {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .section-style .box {
     position: relative;
     overflow: hidden;
@@ -533,7 +538,9 @@ main::-webkit-scrollbar-track {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: all 400ms;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 /* 호버 효과 */
