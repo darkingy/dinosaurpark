@@ -329,6 +329,16 @@ main::-webkit-scrollbar-track {
     gap: 0;
 }
 
+.section__pro-intro.is-fadeout {
+    opacity: 0;
+    transform: translate3d(0, 4rem, 0);
+}
+
+.section__pro-intro.is-fadein {
+    opacity: 1;
+    transform: translate3d(0, 1rem, 0);
+}
+
 @media (max-width: 60em) {
     .section__pro-intro {
         padding-top: 11%;
@@ -468,12 +478,6 @@ main::-webkit-scrollbar-track {
     text-align: right;
 }
 
-.is-visible .section-style>* {
-    opacity: 1;
-    transform: translate3d(0, -1rem, 0);
-    transition: opacity 800ms var(--delay), transform 800ms cubic-bezier(0.13, 0.07, 0.26, 0.99) var(--delay);
-}
-
 .section-style p {
     color: white;
     text-align: center;
@@ -503,20 +507,6 @@ main::-webkit-scrollbar-track {
     }
 }
 
-@media (max-height: 800px) {
-    .section-style .container {
-        width: 600px;
-        height: 300px;
-    }
-}
-
-@media (max-height: 650px) {
-    .section-style .container {
-        width: 300px;
-        height: 150px;
-    }
-}
-
 .section-style .container {
     position: relative;
     top: 100px;
@@ -526,16 +516,10 @@ main::-webkit-scrollbar-track {
     transition: grid-template-columns 0.s ease-in-out;
 }
 
-.is-visible .section-style .container {
+.section-style .is-fade {
     opacity: 1;
     transform: translate3d(0, -1rem, 0);
     transition: opacity 800ms var(--delay), transform 800ms cubic-bezier(0.13, 0.07, 0.26, 0.99) var(--delay);
-
-}
-
-.is-visible .section-style .box img {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .section-style .box {
@@ -546,6 +530,11 @@ main::-webkit-scrollbar-track {
     justify-content: center;
     align-items: center;
     transition: all 400ms;
+}
+
+.section-style .box img.is-fade {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .section-style .box img {
