@@ -6,6 +6,7 @@
     <title th:text="${emptype}">Department Type</title>
     <!--CSS 파일 적용-->
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="profile">
@@ -48,8 +49,7 @@
                     <h2 class="card-jobtitle" th:text="${employee.empPosition}"></h2>
                 </div>
                 <div class="card-main">
-                    <div class="card-
-                     is-active" id="about">
+                    <div class="card-section is-active" id="about">
                         <div class="card-content">
                             <div class="card-subtitle">ABOUT</div>
                             <p class="card-desc">
