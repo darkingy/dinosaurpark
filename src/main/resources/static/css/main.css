@@ -99,7 +99,7 @@ main::-webkit-scrollbar-track {
 /* Nav */
 .nav__list {
     display: flex;
-    height: 4rem;   
+    height: 4rem;
     align-items: center;
     justify-content: flex-end;
     padding: 0.625rem 0;
@@ -138,34 +138,43 @@ main::-webkit-scrollbar-track {
 }
 
 .hamburger-menu {
-    display: none; /* 기본적으로는 숨김 */
+    display: none;
+    /* 기본적으로는 숨김 */
     cursor: pointer;
-    font-size: 45px; /* 아이콘 크기 */
+    font-size: 45px;
+    /* 아이콘 크기 */
     background: none;
     border: none;
-    color: rgb(172, 236, 22); /* 아이콘 색상 */
+    color: rgb(172, 236, 22);
+    /* 아이콘 색상 */
 }
 
 @media (max-width: 700px) {
     nav {
-        position: relative; /* 햄버거 메뉴의 위치 기준 */
+        position: relative;
+        /* 햄버거 메뉴의 위치 기준 */
         top: 0.625rem;
         left: 0.625rem;
     }
-    
+
     .hamburger-menu {
-        display: block; /* 작은 화면에서 버튼 표시 */
-        position: absolute; /* 로고 옆에 위치 */
+        display: block;
+        /* 작은 화면에서 버튼 표시 */
+        position: absolute;
+        /* 로고 옆에 위치 */
         z-index: 1000;
     }
 
     .nav__item {
-        display: none; /* 작은 화면에서 네비게이션 항목 숨김 */
+        display: none;
+        /* 작은 화면에서 네비게이션 항목 숨김 */
     }
 
     .nav__item.nav__logo {
-        display: flex; /* 로고는 항상 표시 */
-        justify-content: flex-start; /* 로고를 왼쪽으로 정렬 */
+        display: flex;
+        /* 로고는 항상 표시 */
+        justify-content: flex-start;
+        /* 로고를 왼쪽으로 정렬 */
     }
 
     .nav__list.active {
@@ -174,22 +183,26 @@ main::-webkit-scrollbar-track {
         position: fixed;
         top: 0;
         right: 0;
-        background: rgba(0, 0, 0, 0.9); /* 어두운 배경 */
+        background: rgba(0, 0, 0, 0.9);
+        /* 어두운 배경 */
         height: 100%;
         width: 100%;
-        justify-content: flex-start; /* 내용을 상단에 정렬 */
-        align-items: flex-end; /* 내용을 우측에 정렬 */
+        justify-content: flex-start;
+        /* 내용을 상단에 정렬 */
+        align-items: flex-end;
+        /* 내용을 우측에 정렬 */
         padding: 20px;
     }
 
     .nav__list.active .nav__item {
-        display: block; /* active 상태일 때 네비게이션 항목 표시 */
+        display: block;
+        /* active 상태일 때 네비게이션 항목 표시 */
     }
 }
 
 /* Sections */
 .section {
-    color: white;   
+    color: white;
     position: relative;
     scroll-snap-align: center;
     display: flex;
@@ -295,6 +308,21 @@ main::-webkit-scrollbar-track {
 .section__main-title--left {
     grid-column: 1/-1;
     grid-row: 1 /3;
+}
+
+.section__dino-title {
+    display: grid;
+    place-items: center;
+    margin-top: 30px;
+    grid-template-columns: none;
+    grid-template-rows: none;
+    gap: 0;
+}
+
+@media (max-width: 700px) {
+    .section__pro-intro {
+        padding-top: 11%;
+    }
 }
 
 /*section__img 이하 동일 */
@@ -411,11 +439,19 @@ main::-webkit-scrollbar-track {
     grid-row: 2/4;
 }
 
+/*dinosaur-infos 이하 동일 */
+
+/*employee-infos 이하 동일 */
+
 /*demo.html에서 공룡, 직원 section*/
 .section-style {
     display: grid;
     place-items: center;
-    min-height: 200px;
+    grid-template-columns: none;
+    grid-template-rows: none;
+    gap: 0;
+    padding: 0;
+    flex-grow: 0;
 }
 
 .section-title {
@@ -426,7 +462,6 @@ main::-webkit-scrollbar-track {
     opacity: 1;
     transform: translate3d(0, -1rem, 0);
     transition: opacity 800ms var(--delay), transform 800ms cubic-bezier(0.13, 0.07, 0.26, 0.99) var(--delay);
-
 }
 
 .section-style p {
@@ -485,6 +520,7 @@ main::-webkit-scrollbar-track {
 }
 
 /* 특정 섹션에만 적용되는 스타일 */
+
 .section-style .container:has(.box-1:hover) {
     grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
 }
@@ -586,7 +622,7 @@ main::-webkit-scrollbar-track {
     /* 작아질 때 느리게 전환 */
 }
 
-/* ...Profile.html에 적용 */
+/* Profile.html에 적용 */
 /* 공룡, 직원 프로필 스타일 */
 .profile {
     background-image: url('../img/background_2000.jpg');
@@ -639,7 +675,7 @@ main::-webkit-scrollbar-track {
     font-weight: 400;
 }
 
-/* empProfile.html 스타일 */
+/* 프로필 스타일 */
 .cards-container {
     display: flex;
     flex-wrap: wrap;
@@ -965,7 +1001,7 @@ main::-webkit-scrollbar-track {
     transition: 0.3s;
 }
 
-/*dinoProfile.html 스타일*/
+/*공룡 리스트 스타일*/
 .dino {
     display: flex;
     flex-wrap: wrap;
@@ -979,8 +1015,10 @@ main::-webkit-scrollbar-track {
 }
 
 .dinos .card {
-    flex: none; /* flex 속성을 무시하거나 다른 값으로 재정의 */
-    width: auto; /* width 값을 원하는 대로 재정의 */
+    flex: none;
+    /* flex 속성을 무시하거나 다른 값으로 재정의 */
+    width: auto;
+    /* width 값을 원하는 대로 재정의 */
 }
 
 .dino-gallery {
