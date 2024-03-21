@@ -1055,3 +1055,19 @@ main::-webkit-scrollbar-track {
     font-size: larger;
     font-weight: 1000;
 }
+
+.footer {
+    background-color: #000000;
+    position: absolute;
+    bottom: 0%;
+    width: 100%; /* 전체 너비로 설정 */
+    text-align: center; /* 텍스트를 가운데로 정렬 */
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.footer img {
+    top: 30%;
+    left: 30%;
+}
