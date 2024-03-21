@@ -48,13 +48,13 @@ h2 {
     margin: 0;
 }
 
-@media (min-width: 40em) {
+@media (min-width: 720px) {
     h2 {
         font-size: 3.75rem;
     }
 }
 
-@media (min-width: 60em) {
+@media (min-width: 1100px) {
     h2 {
         font-size: 5.5rem;
     }
@@ -341,7 +341,7 @@ main::-webkit-scrollbar-track {
 
 @media (max-width: 60em) {
     .section__pro-intro {
-        padding-top: 11%;
+        padding-top: 20%;
     }
 }
 
@@ -486,7 +486,7 @@ main::-webkit-scrollbar-track {
     /* 상단 여백 */
 }
 
-@media (max-width: 850px) {
+@media (max-width: 60em) {
     .section-style .container {
         width: 600px;
         height: 300px;
@@ -500,7 +500,7 @@ main::-webkit-scrollbar-track {
     }
 }
 
-@media (min-width: 851px) {
+@media (min-width: 60.001em) {
     .section-style .container {
         width: 800px;
         height: 500px;
