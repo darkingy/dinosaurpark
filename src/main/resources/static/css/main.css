@@ -329,7 +329,7 @@ main::-webkit-scrollbar-track {
     gap: 0;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 60em) {
     .section__pro-intro {
         padding-top: 11%;
     }
@@ -500,6 +500,20 @@ main::-webkit-scrollbar-track {
     .section-style .container {
         width: 800px;
         height: 500px;
+    }
+}
+
+@media (max-height: 800px) {
+    .section-style .container {
+        width: 600px;
+        height: 300px;
+    }
+}
+
+@media (max-height: 650px) {
+    .section-style .container {
+        width: 300px;
+        height: 150px;
     }
 }
 
@@ -1135,4 +1149,35 @@ main::-webkit-scrollbar-track {
     color: red;
     font-size: larger;
     font-weight: 1000;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    text-align: center;
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.footer .content {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.footer .text {
+    margin-left: 20px;
+}
+
+.footer img {
+    top: 30%;
+    left: 30%;
+}
+
+@media (max-width: 1487px ){
+   .team2 {
+    display : none;
+   } 
 }
