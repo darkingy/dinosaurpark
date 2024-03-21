@@ -1079,13 +1079,15 @@ main::-webkit-scrollbar-track {
     line-height: 100%;
 }
 
-.dino-image {
+.dino-image {   
     position: absolute;
-    top: 10%;
+    top: 50%;
     left: 33%;
+    transform: translate(0%, -50%);
     z-index: 4;
-    height: 450px;
+    max-height: 400px;
     width: auto;
+    max-width: none;
 }
 
 .high-alarm {

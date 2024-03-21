@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.getElementById('error').addEventListener('click', function(event) {
   event.preventDefault(); // 기본 동작(링크 이동)을 막습니다.
-  swal('Error!',
+  swal('Comming Soon!',
   'Preparing Pages',
-  'error');
+  'warning');
 });
