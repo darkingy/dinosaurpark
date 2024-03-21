@@ -482,14 +482,33 @@ main::-webkit-scrollbar-track {
     /* 상단 여백 */
 }
 
+@media (max-width: 850px) {
+    .section-style .container {
+        width: 600px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 650px) {
+    .section-style .container {
+        width: 400px;
+        height: 250px;
+    }
+}
+
+@media (min-width: 801px) {
+    .section-style .container {
+        width: 800px;
+        height: 500px;
+    }
+}
+
 .section-style .container {
     position: relative;
     top: 100px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1em;
-    width: 800px;
-    height: 500px;
     transition: grid-template-columns 0.s ease-in-out;
 }
 
