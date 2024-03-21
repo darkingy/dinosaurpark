@@ -11,6 +11,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <!-- GSAP ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <!--SweetAlert2-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -49,7 +51,7 @@
             </div>
             <div class="hero__content" data-content>
                 <div class="hero__text">
-                    <img class="hero__logo" src="img/logo_1.png" alt="Main logo">
+                    <img class="hero__logo" src="img/logo_1.png" alt="Main logo" style="opacity: 1;">
                 </div>
             </div>
         </section>
@@ -68,19 +70,19 @@
                         Go on safari and explore the world of our giant creatures
                         – the largest animals to have ever lived.
                     </p>
-                    <p><a href="">Find out more</a></p>
+                    <p><a href="#" id="error">Find out more</a></p>
                 </div>
             </div>
         </section>
 
         <!-- DINOSAUR -->
-        <section class="section" id="dinosaur">
+        <section class="section dinosaur-infos" id="dinosaur">
             <header class="section__header">
                 <h3 class="section__title">Dinosaurs</h3>
             </header>
 
-            <div class="section-style" data-content>
-                <h2 class="section-title">MEET OUR DINOSAURS</h2>
+            <div class="section-style section__content section__content--profile-infos" data-content>
+                <h2 class="section__dino-title section__pro-intro">MEET OUR DINOSAURS</h2>
                 <div class="container">
                     <a href="/dinosaurs/dino/수각류" class="box box-1" data-text="수각류"><img src="img/수각류.jpg"
                             alt="육각류 이미지"></a>
@@ -97,12 +99,13 @@
         </section>
 
         <!-- DEPARTMENT -->
-        <section class="section" id="employee">
+        <section class="section employee-infos" id="employee">
             <header class="section__header">
                 <h3 class="section__title">Employees</h3>
           </header>
-            <div class="section-style">
-                <p>MEET OUR TEAM</p>
+
+            <div class="section-style section__content section__content--profile-infos" data-content>
+                <h2 class="section__dino-title section__pro-intro">MEET OUR TEAM</h2>
                 <div class="container">
                     <a href="employee/empdepart/가이드팀" class="box box-1" data-text="가이드팀"><img src="img/가이드.jpg"
                             alt=""></a>

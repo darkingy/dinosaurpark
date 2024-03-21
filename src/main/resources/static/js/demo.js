@@ -1,4 +1,5 @@
 const sections = [...document.querySelectorAll("section")];
+const navLogo = document.querySelector(".nav__logo");
 
 let options = {
   rootMargin: "0px",
@@ -9,10 +10,14 @@ const callback = (entries, observer) => {
   entries.forEach(entry => {
     const { target } = entry;
 
-    if (entry.intersectionRatio >= 0.75) {
+    if (entry.intersectionRatio >= 0.75 && !target.classList.contains("hero")) {
       target.classList.add("is-visible");
+      navLogo.classList.add("is-visible");
     } else {
       target.classList.remove("is-visible");
+      if (!target.classList.contains("hero")) {
+        navLogo.classList.remove("is-visible");
+      }
     }
   });
 };
@@ -59,4 +64,11 @@ document.addEventListener('DOMContentLoaded', function() {
           navList.classList.remove('active'); // active 클래스 제거
       }
   });
+});
+
+document.getElementById('error').addEventListener('click', function(event) {
+  event.preventDefault(); // 기본 동작(링크 이동)을 막습니다.
+  swal('Comming Soon!',
+  'Preparing Pages',
+  'warning');
 });
