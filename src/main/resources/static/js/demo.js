@@ -1,4 +1,5 @@
 const sections = [...document.querySelectorAll("section")];
+const navLogo = document.querySelector(".nav__logo");
 
 let options = {
   rootMargin: "0px",
@@ -9,10 +10,14 @@ const callback = (entries, observer) => {
   entries.forEach(entry => {
     const { target } = entry;
 
-    if (entry.intersectionRatio >= 0.75) {
+    if (entry.intersectionRatio >= 0.75 && !target.classList.contains("hero")) {
       target.classList.add("is-visible");
+      navLogo.classList.add("is-visible");
     } else {
       target.classList.remove("is-visible");
+      if (!target.classList.contains("hero")) {
+        navLogo.classList.remove("is-visible");
+      }
     }
   });
 };
