@@ -1,10 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
   // 페이지가 로드될 때 모든 섹션에 'is-visible' 클래스를 추가
-  const allSections = document.querySelectorAll('.section');
-  allSections.forEach(section => {
-    section.classList.add('is-visible');
-  });
-
   const sections = [...document.querySelectorAll("section")];
   const navLogo = document.querySelector(".nav__logo");
 
@@ -16,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const callback = (entries, observer) => {
     entries.forEach(entry => {
       const { target } = entry;
-  
+
       // hero 섹션이 아니며, 교차 비율이 0.75 이상일 때
       if (entry.intersectionRatio >= 0.75 && !target.classList.contains("hero")) {
         target.classList.add("is-visible");
@@ -52,40 +47,69 @@ document.addEventListener('DOMContentLoaded', function () {
       observer.observe(section);
     }
   });
-}); 
+});
 
-  //햄버거 효과
-  document.addEventListener('DOMContentLoaded', function () {
-    const hamburger = document.querySelector('.hamburger-menu');
-    const navList = document.querySelector('.nav__list');
-    const navItems = document.querySelectorAll('.nav__item'); // 네비게이션 항목 선택
-    const navLogo = document.querySelector('.nav__item.nav__logo');
-    hamburger.addEventListener('click', function () {
-      // 'active' 클래스 토글을 통해 네비게이션 항목을 표시하거나 숨김
-      navList.classList.toggle('active');
+document.addEventListener('DOMContentLoaded', () => {
+  // section-style 클래스를 가진 .box 내부의 img 태그 선택
+  const images = document.querySelectorAll('.section-style .box img');
+  const titles = document.querySelectorAll('.section__pro-intro');
 
-      // .nav__list가 'active' 상태일 때 항목을 표시
-      if (navList.classList.contains('active')) {
-        navItems.forEach(item => item.style.display = 'block');
-        navLogo.style.display = "none";
+  const options = {
+    rootMargin: '0px',
+    threshold: 0.75 // 요소가 75% 보이는 순간 콜백 실행
+  };
+
+  const observerCallback = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.intersectionRatio >= 0.75) {
+        // 교차 비율이 0.75 이상이면 .is-fade 클래스 추가
+        entry.target.classList.add('is-fade');
+        entry.target.classList.remove('is-fadeout');
       } else {
-        navItems.forEach(item => item.style.display = 'none');
-        navLogo.style.display = 'flex';
+        entry.target.classList.remove('is-fade');
+        entry.target.classList.add('is-fadeout');
       }
     });
+  };
 
-    window.addEventListener('resize', function () {
-      // 화면이 넓어졌을 때 네비게이션 항목 스타일 리셋
-      if (window.innerWidth > 700) {
-        navItems.forEach(item => item.style.display = ''); // 인라인 스타일 제거
-        navList.classList.remove('active'); // active 클래스 제거
-      }
-    });
+  // IntersectionObserver 인스턴스 생성 및 이미지 관찰 시작
+  const observer = new IntersectionObserver(observerCallback, options);
+  images.forEach(image => observer.observe(image));
+  titles.forEach(title => observer.observe(title));
+});
+
+//햄버거 효과
+document.addEventListener('DOMContentLoaded', function () {
+  const hamburger = document.querySelector('.hamburger-menu');
+  const navList = document.querySelector('.nav__list');
+  const navItems = document.querySelectorAll('.nav__item'); // 네비게이션 항목 선택
+  const navLogo = document.querySelector('.nav__item.nav__logo');
+  hamburger.addEventListener('click', function () {
+    // 'active' 클래스 토글을 통해 네비게이션 항목을 표시하거나 숨김
+    navList.classList.toggle('active');
+
+    // .nav__list가 'active' 상태일 때 항목을 표시
+    if (navList.classList.contains('active')) {
+      navItems.forEach(item => item.style.display = 'block');
+      navLogo.style.display = "none";
+    } else {
+      navItems.forEach(item => item.style.display = 'none');
+      navLogo.style.display = 'flex';
+    }
   });
 
-  document.getElementById('error').addEventListener('click', function (event) {
-    event.preventDefault(); // 기본 동작(링크 이동)을 막습니다.
-    swal('Comming Soon!',
-      'Preparing Pages',
-      'warning');
+  window.addEventListener('resize', function () {
+    // 화면이 넓어졌을 때 네비게이션 항목 스타일 리셋
+    if (window.innerWidth > 700) {
+      navItems.forEach(item => item.style.display = ''); // 인라인 스타일 제거
+      navList.classList.remove('active'); // active 클래스 제거
+    }
   });
+});
+
+document.getElementById('error').addEventListener('click', function (event) {
+  event.preventDefault(); // 기본 동작(링크 이동)을 막습니다.
+  swal('Comming Soon!',
+    'Preparing Pages',
+    'warning');
+});
