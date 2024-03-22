@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // 페이지가 로드될 때 모든 섹션에 'is-visible' 클래스를 추가
   const sections = [...document.querySelectorAll("section")];
   const navLogo = document.querySelector(".nav__logo");
 
