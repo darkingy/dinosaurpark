@@ -1,5 +1,7 @@
 package com.example.dinosaurpark.dinosaur;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -9,31 +11,34 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@Entity
 public class Dinosaur {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String dinoName;
+    @Column
     private String dinoSpecies;
+
+    @Column
     private String dinoEra;
-    private String dinoType;
-    private String dinoFeature;
-    private Double dinoSize;
-    private Double dinoWeight;
-    private Integer dinoDangerLevel;
-    private Integer dinoHealthStatus;
     
-    public Dinosaur(Integer id, String dinoName, String dinoSpecies, String dinoEra, String dinoType, String dinoFeature, double dinoSize, double dinoWeight, Integer dinoDangerLevel, Integer dinoHealthStatus) {
-    	this.id = id;
-        this.dinoName = dinoName;
-        this.dinoSpecies = dinoSpecies;
-        this.dinoEra = dinoEra;
-        this.dinoType = dinoType;
-        this.dinoFeature = dinoFeature;
-        this.dinoSize = dinoSize;
-        this.dinoWeight = dinoWeight;
-        this.dinoDangerLevel = dinoDangerLevel;
-        this.dinoHealthStatus = dinoHealthStatus;
-    }
+    @Column
+    private String dinoType;
+    
+    @Column
+    private String dinoFeature;
+    
+    @Column
+    private Double dinoSize;
+    
+    @Column
+    private Double dinoWeight;
+    
+    @Column
+    private Integer dinoDangerLevel;
+    
+    @Column
+    private Integer dinoHealthStatus;
+
 }
