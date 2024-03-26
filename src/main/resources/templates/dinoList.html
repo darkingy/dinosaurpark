@@ -1,0 +1,25 @@
+<table>
+    <thead>
+        <tr>
+            <th>Species</th>
+            <th>Era</th>
+            <th>Type</th>
+            <th>Feature</th>
+            <th>size</th>
+            <th>weight</th>
+            <th>danger-level</th>
+            <th>health status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="dinosaur: ${dinosaurList}">
+            <td th:text="${dinosaur.dinoSpecies}"></td>
+            <td th:text="${dinosaur.dinoEra}"></td>
+            <td th:text="${dinosaur.dinoType}"></td>
+            <td th:text="${dinosaur.dinoFeature}"></td>
+            <td th:text="${dinosaur.dinoSize}"></td>
+            <td th:text="${dinosaur.dinoWeight}"></td>
+            <td th:text="${dinosaur.dinoDangerLevel}"></td>
+            <td th:text="${dinosaur.dinoHealthStatus}"></td>
+        </tr>
+    </tbody>
